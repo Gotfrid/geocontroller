@@ -15,7 +15,7 @@ download_regions = list(
 # 1. Download zip archive with ESRI shapefile from Geofabrik
 for (region in download_regions) {
     curl::curl_download(url = glue("http://download.geofabrik.de/russia/{region}.shp.zip"),
-                        destfile = "./data/.shp.zip", 
+                        destfile = glue("./data/{region}.shp.zip"), 
                         quiet = F)
 }
 
@@ -24,5 +24,3 @@ for (region in download_regions) {
     unzip(zipfile = glue("data/{region}.shp.zip"), exdir = glue("data/{region}"))
     unlink(glue("data/{region}.shp.zip"))
 }
-
-
