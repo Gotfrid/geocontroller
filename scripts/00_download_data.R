@@ -1,5 +1,5 @@
 # 0. Areas to download
-download_regions = list(
+download_regions <- list(
     CentrFD = "central-fed-district-latest-free",
     Crimea = "crimean-fed-district-latest-free",
     FEFD = "far-eastern-fed-district-latest-free",
@@ -14,9 +14,11 @@ download_regions = list(
 
 # 1. Download zip archive with ESRI shapefile from Geofabrik
 for (region in download_regions) {
-    curl::curl_download(url = glue("http://download.geofabrik.de/russia/{region}.shp.zip"),
-                        destfile = glue("./data/{region}.shp.zip"), 
-                        quiet = F)
+    curl::curl_download(
+        url = glue("http://download.geofabrik.de/russia/{region}.shp.zip"),
+        destfile = glue("./data/{region}.shp.zip"),
+        quiet = F
+    )
 }
 
 # 2. Unzip downloaded file and remove archives
