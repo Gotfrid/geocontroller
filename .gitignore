@@ -40,3 +40,6 @@ data/*
 
 # exception to the rule
 !data/.gitkeep 
+
+# OTHER RSTUDIO FILES
+*.Rproj
