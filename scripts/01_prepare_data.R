@@ -5,7 +5,8 @@ shp_files <- list.files(
 )
 
 # get only places as points
-places_points <- shp_files[grepl(pattern = "places_free", x = shp_files)] # omit places_a which is polygons
+# omit places_a which is polygons
+places_points <- shp_files[grepl(pattern = "places_free", x = shp_files)] 
 
 # load this into R
 # TODO do it in more eddicient way
